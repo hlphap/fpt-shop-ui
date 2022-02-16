@@ -72,6 +72,7 @@
   overflow: hidden;
   animation: fadeIn 0.2s ease;
   display: none;
+  z-index: 2;
 }
 
 .header-top__search-trend-heading {
@@ -148,7 +149,7 @@
   list-style: none;
   animation: fadeInGoUp 0.2s ease-out;
   display: none;
-  z-index: 1;
+  z-index: 2;
 }
 
 .header-top__more-info::before {
@@ -215,7 +216,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
-  padding-bottom: 200px;
+  padding-bottom: 15px;
 }
 
 /* TODO: Countdown */
@@ -269,6 +270,7 @@
 }
 
 .intro__img {
+  display: block;
   border-radius: 4px;
   width: 100%;
 }
@@ -432,3 +434,89 @@
 }
 
 /* END: App container */
+
+/* TODO: footer */
+.footer {
+  background-color: #fff;
+  padding-top: 25px;
+}
+
+.footer__info {
+  padding-bottom: 15px;
+}
+
+.footer__list {
+  list-style: none;
+  padding: 0 12px;
+}
+
+.footer__item-link {
+  display: inline-block;
+  font-size: 1.4rem;
+  color: #3399d2;
+  padding: 5px 0;
+  text-decoration: none;
+  margin-left: -12px;
+}
+
+.footer__item-link:hover {
+  color: var(--black-color);
+  text-decoration: underline;
+}
+
+.footer__contact-title {
+  display: block;
+  color: #4a4a4a;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 5px 0 0;
+}
+
+.footer__contact-phone {
+  color: var(--primary-color);
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 4px 0;
+}
+
+.footer__contact-phone-more {
+  color: #4a4a4a;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.footer__company {
+  background-color: #f2f2f2;
+  padding: 10px 2px;
+}
+
+.footer__company-content {
+  background: #f2f2f2;
+  font-size: 1rem;
+  color: #6d6d6d;
+  text-align: center;
+}
+
+.footer__certificate,
+.footer__payment {
+  margin-top: 15px;
+}
+
+.footer__certificate-heading,
+.footer__payment-heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #4a4a4a;
+  margin-bottom: 5px;
+}
+
+.footer__certificate-wrap-img,
+.footer__payment-wrap-img {
+  display: flex;
+}
+
+.footer__certificate-img,
+.footer__payment-img {
+  width: 44px;
+  padding-left: 2px;
+}

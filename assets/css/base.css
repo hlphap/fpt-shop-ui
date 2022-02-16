@@ -48,6 +48,18 @@ html {
   width: calc(100% / 2);
 }
 
+.grid__col-20per {
+  width: 20%;
+}
+
+.grid__col-40per {
+  width: 40%;
+}
+
+.grid__col-60per {
+  width: 60%;
+}
+
 /* TODO: Box */
 .box {
   background-color: var(--white-color);
@@ -128,6 +140,7 @@ html {
 .product {
   padding: 16px;
   border: solid 1px #fff;
+  position: relative;
 }
 
 .product:hover .product__img {
@@ -135,6 +148,10 @@ html {
   -ms-transform: scale(1.03);
   transform: scale(1.03);
   transition: all 0.5s;
+}
+
+.product:hover .product__controls {
+  visibility: visible;
 }
 
 .product:hover {
@@ -278,4 +295,87 @@ html {
   font-size: 1.3rem;
   line-height: 1.6rem;
   text-align: left;
+}
+
+.btn {
+  text-decoration: none;
+  outline: none;
+  border: none;
+  padding: 0 8px;
+  min-width: 100px;
+  min-height: 34px;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  display: inline-block;
+  text-align: center;
+  line-height: 34px;
+}
+
+.product__controls {
+  position: absolute;
+  bottom: -35px;
+  left: 0;
+  display: flex;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.product__buy-btn {
+  width: 160px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  margin-right: auto;
+}
+
+.product__compare-btn {
+  background-color: #616157;
+  color: var(--white-color);
+}
+
+/* TODO Slider */
+
+.slider {
+  position: relative;
+}
+
+.slider__prev,
+.slider__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border: 1px solid #a7a7b1;
+  color: #6c757d;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 48px;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 2.6rem;
+  z-index: 1;
+}
+
+.slider__prev:hover,
+.slider__next:hover {
+  background-color: var(--white-color);
+  cursor: pointer;
+}
+
+.slider__prev {
+  left: 12px;
+}
+
+.slider__next {
+  right: 12px;
+}
+
+.slider__main-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider__main {
+  display: flex;
+  transition: transform 0.5s linear;
+  will-change: transform;
 }
