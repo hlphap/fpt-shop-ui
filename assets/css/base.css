@@ -141,6 +141,7 @@ html {
   padding: 16px;
   border: solid 1px #fff;
   position: relative;
+  background-color: var(--white-color);
 }
 
 .product:hover .product__img {
@@ -151,7 +152,7 @@ html {
 }
 
 .product:hover .product__controls {
-  visibility: visible;
+  display: flex;
 }
 
 .product:hover {
@@ -160,6 +161,11 @@ html {
   -webkit-box-shadow: 0 0 2px 0 #dee2e6;
   border-radius: 6px;
   transition: all 0.5s;
+  z-index: 3;
+}
+
+.product--has-controls-btn:hover {
+  height: calc(100% + 36px);
 }
 
 .product__img-wrap {
@@ -309,14 +315,17 @@ html {
   display: inline-block;
   text-align: center;
   line-height: 34px;
+  transition: background-color 0.2s linear;
 }
 
 .product__controls {
   position: absolute;
-  bottom: -35px;
   left: 0;
-  display: flex;
-  visibility: hidden;
+  bottom: 10px;
+  padding: 0 16px;
+  width: 100%;
+  display: none;
+  justify-content: space-between;
   z-index: 1;
 }
 
@@ -327,9 +336,17 @@ html {
   margin-right: auto;
 }
 
+.product__buy-btn:hover {
+  background: #ae1427;
+}
+
 .product__compare-btn {
-  background-color: #616157;
+  background-color: #99a2aa;
   color: var(--white-color);
+}
+
+.product__compare-btn:hover {
+  background: #6c757d;
 }
 
 /* TODO Slider */
