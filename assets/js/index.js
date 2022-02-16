@@ -10,29 +10,29 @@ window.addEventListener('load', function () {
     const sliderItemWidth = sliderItems[0].offsetWidth;
     const lengthItem = sliderItems.length;
 
-    setInterval(() => {
-        index++;
-        if (index > (lengthItem - 1)) {
-            index = 0;
-        }
-        handleChangeSlider()
-    }, 4000)
+    let myTimerNextSlider = window.setInterval(autoNewSlider, 4000)
 
     nextBtn.addEventListener('click', function () {
         index++;
         handleChangeSlider()
+        window.clearInterval(myTimerNextSlider);
+        myTimerNextSlider = window.setInterval(autoNewSlider, 4000);
     })
 
 
     prevBtn.addEventListener('click', function () {
         index--;
-        handleChangeSlider()
+        handleChangeSlider();
+        window.clearInterval(myTimerNextSlider);
+        myTimerNextSlider = window.setInterval(autoNewSlider, 4000);
     })
 
     sliderDotItems.forEach((dotItem, i) => {
         dotItem.addEventListener('click', function () {
             index = i;
             handleChangeSlider()
+            window.clearInterval(myTimerNextSlider);
+            myTimerNextSlider = window.setInterval(autoNewSlider, 4000);
         })
     }
     )
@@ -51,6 +51,14 @@ window.addEventListener('load', function () {
         sliderMain.style = `transform: translateX(${positionX}px)`
         removeDots();
         sliderDotItems[index].classList.add('intro__control-item--selected')
+    }
+
+    function autoNewSlider() {
+        index++;
+        if (index > (lengthItem - 1)) {
+            index = 0;
+        }
+        handleChangeSlider()
     }
 
     // Countdown
